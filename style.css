@@ -1,0 +1,253 @@
+body {
+    font-size: 13px;
+    background: #fff;
+    color: #222;
+    font-family: arial, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+    top: 16px;
+    font-size: 13px;
+}
+
+
+.head-left {
+    margin: 7px 0 0 10px;
+}
+
+.head-left a {
+    padding-left: 15px;
+    color: #000;
+    opacity: 0.75;
+}
+
+.head-right {
+    min-width: 220px;
+    padding: 0 30px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    align-items: center;    /* Pack items around the center */
+    /* The CSS align-items property sets 
+    the align-self value on all direct children as a group. */
+}
+
+
+.head-right-links {
+    padding-right: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.head-right-links a {
+    color: rgba(0,0,0,0.87);
+    padding-left: 15px;
+    line-height: 24px;
+}
+
+.head-right a {
+    display: inline-block;
+}
+
+.head-right-google-apps {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.head-right-icons {
+    min-width: 114px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.head-right-sign-in {
+    cursor: default;
+    color: #fff;
+
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    outline: none;  /* right outside the border */
+
+    background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+
+    margin-left: 15px;
+    padding: 0 12px;
+    border-radius: 2px;
+    line-height: 28px;
+}
+
+.head-right-sign-in:hover {
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 980px;
+    border-top: 1px solid #e4e4e4;
+
+    /* setting for the left footbar and the right footbar */
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #f2f2f2;
+
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.left-footbar {
+    display: flex;
+    justify-content: start;
+    padding-left: 3px;
+}
+
+.right-footbar {
+    display: flex;
+    justify-content: end;
+    padding-right: 30px;
+}
+
+.footer-link {
+    padding-left: 27px;
+    color: #5f6368;
+}
+
+
+.container {
+    width: 100%;
+    margin-top: 168px;
+    /* border: 1px solid black; */
+}
+
+.main-image-container {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.main-image-container img {
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+
+.submit-form {
+    width: 100%;
+    /* border: 1px solid black; */
+    padding-top: 27px;
+}
+
+
+.search-bar-wrap {
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+
+    /* height: 42px;
+    width: 580px; */
+    height: 44px;
+    width: 582px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.search-text {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    line-height: 34px;
+    font-size: 16px;
+    width: 487px;
+    /* border: 1px solid red; */
+    padding: 1px 0;
+    border: none;
+    outline: none;  /* no outline when clicking */
+
+}
+
+.left-search-icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    /* border: 1px solid red; */
+    padding-left: 14px;
+    padding-bottom: 3px;
+}
+
+.left-search-icon svg {
+    fill: #9AA0A6;
+}
+
+.right-microphone-icon {
+    height: 24px;
+    width: 24px;
+    padding: 0 16px;
+}
+
+.submitbar-wrap {
+    margin: 0 auto;
+    padding-top: 18px;
+    height: 70px;
+    width: 571px;
+    display: flex;
+    justify-content: center;
+}
+
+.submitbar-wrap input[type="submit"] {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+
+    font-size: 14px;
+    height: 36px;
+
+    min-width: 54px;
+    cursor: pointer;
+}
+
+.google-search-btn {
+    /* top | right | bottom | left */
+    margin: 11px 10px 11px 4px;
+    padding: 0 16px;
+}
+
+.lucky-btn {
+    margin: 11px 17px 11px 4px;
+    padding: 0 16px;
+}
+
+
+.submitbar-wrap input[type="submit"]:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
+}
+
+
