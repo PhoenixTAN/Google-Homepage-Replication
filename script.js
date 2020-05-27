@@ -1,111 +1,54 @@
 
 var googleAppsIcon = document.getElementById("head-right-google-apps");
+var googleAppsModal = document.getElementById("apps-modal");
+var setting = document.getElementById("setting");
+var settingPopupModal = document.getElementById("setting-floating-popup-modal");
 
-googleAppsIcon.onclick = function(event) {
-    // document.removeEventListener("click", clearPopup);
-    var googleApps = document.getElementById("floating-popup-apps");
+/* EventListener */
+googleAppsIcon.addEventListener("click", showGoogleApps); 
+setting.addEventListener("click", showSettingPopup)
+document.addEventListener("click", clearPopup);
 
-    if ( googleApps.style.display == "block" ) {
-        googleApps.style.display = "none";
-        return ;
+
+function clearPopup(event) {
+    if ( event.target == googleAppsModal ) {
+        googleAppsModal.style.display = "none";
     }
-
-    googleApps.style.display = "block";
-    // document.addEventListener("click", clearPopup);
-    
-    event.stopPropagation();
-    /* 
-        prevents further propagation of the current event 
-        in the capturing and bubbling phases.
-    */
+    if ( event.target == settingPopupModal ) {
+        settingPopupModal.style.display = "none";
+    }
 }
 
-var setting = document.getElementById("setting");
+function showGoogleApps() {
+   googleAppsModal.style.display = "block";
+}
 
-setting.onclick = function(event) {
-    var settingPopup = document.getElementById("setting-floating-popup");
-    if ( settingPopup.style.display == "block" ) {
-        settingPopup.style.display = "none";
-        return ;
-    }
-    settingPopup.style.display = "block";
-    event.stopPropagation();
+function showSettingPopup() {
+    settingPopupModal.style.display = "block";
+
 }
 
 var searchTextBox = document.getElementById("search-text");
 searchTextBox.onfocus = function(event) {
     var searchPopup = document.getElementById("search-floating-popup");
-    /*if (searchPopup.style.display == "block" ) {
-        searchPopup.style.display = "none";
-        return ;
-    }*/
+    searchPopup.style.display = "block";
+    
     var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
     searchBarWrap.style.borderRadius = "24px 24px 0 0";
-    searchPopup.style.display = "block";
+    
     event.stopPropagation();
 }
 
 
 searchTextBox.onblur = function(event) {
     var searchPopup = document.getElementById("search-floating-popup");
+    searchPopup.style.display = "none";
+
     var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
     searchBarWrap.style.borderRadius = "24px";
-    searchPopup.style.display = "none";
+    
     event.stopPropagation();
 }
 
 
-// document.addEventListener("click", clearPopup());
 
-// window.onclick = function clearPopup(event) {
-
-//     var clientX = event.clientX;
-//     var clientY = event.clientY;
-
-//     /* make the google apps popup window disappear */
-//     var googleApps = document.getElementById("floating-popup-apps");
-//     var position = googleApps.getBoundingClientRect();
-
-//     if ( clientX < position.left || clientX > position.right || 
-//         clientY > position.bottom || clientY < position.top ) {
-//         googleApps.style.display = "none"
-//     }
-
-//     /* make the setting floating popup window disppear */
-//     var settingPopup = document.getElementById("setting-floating-popup");
-//     position = settingPopup.getBoundingClientRect();
-//     if ( clientX < position.left || clientX > position.right || 
-//         clientY > position.bottom || clientY < position.top ) {
-//         settingPopup.style.display = "none"
-//     }
-
-//     /* make the search floating popup window disppear */
-
-// }
-
-document.addEventListener("click", clearPopup);
-function clearPopup(event) {
-
-    var clientX = event.clientX;
-    var clientY = event.clientY;
-
-    /* make the google apps popup window disappear */
-    var googleApps = document.getElementById("floating-popup-apps");
-    var position = googleApps.getBoundingClientRect();
-
-    if ( clientX < position.left || clientX > position.right || 
-        clientY > position.bottom || clientY < position.top ) {
-        googleApps.style.display = "none"
-    }
-
-    /* make the setting floating popup window disppear */
-    var settingPopup = document.getElementById("setting-floating-popup");
-    position = settingPopup.getBoundingClientRect();
-    if ( clientX < position.left || clientX > position.right || 
-        clientY > position.bottom || clientY < position.top ) {
-        settingPopup.style.display = "none"
-    }
-
-    /* make the search floating popup window disppear */
-
-}

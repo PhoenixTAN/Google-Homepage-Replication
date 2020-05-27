@@ -174,7 +174,8 @@ footer {
 
 .search-bar-wrap:hover {
     /* offset-x | offset-y | blur-radius | spread-radius | color */ 
-    box-shadow: 0 1px 3px 1px rgba(60,64,67,.30)/*, 0 2px 6px 2px rgba(60,64,67,.15)*/;
+    box-shadow: 0 1px 3px 1px rgba(60,64,67,.30);
+    /* box-shadow: 0 4px 3px 0 rgba(32,33,36,0.28); */
 }
 
 #search-text {
@@ -251,14 +252,30 @@ footer {
     color: #222;
 }
 
-
-#floating-popup-apps {
+#apps-modal {
     display: none;
     
     position: fixed;
     top: 0;
-    right: 0;
 
+    width: 100%;
+    height: 100%;
+
+    z-index: 10; /* Sit on top */
+    /* border: 1px solid black; */
+}
+
+#floating-popup-apps {
+    /*
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    */
+    position: absolute;
+    top: 0; 
+    right: 0;
+    
     width: 340px;
     height: 468px;
 
@@ -371,11 +388,26 @@ footer {
     background-color:#f8f8ff;
 }
 
+#setting-floating-popup-modal {
+
+    display: none;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;    /* Full width */
+    height: 100%;   /* Full height */
+}
 
 #setting-floating-popup {
-    display: none;
+    /* display: none; */
 
-    position: fixed;
+    /*position: fixed;
+    bottom: 30px;
+    right: 29px;*/
+
+    position: absolute;
     bottom: 30px;
     right: 29px;
 
@@ -385,6 +417,11 @@ footer {
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,.2);
 
+}
+
+
+#setting-floating-popup {
+    
 }
 
 #setting-floating-popup a {
@@ -407,7 +444,7 @@ footer {
     display: none;
     
     position: absolute;
-    top: 46px;
+    top: 45px;
 
     width: 582px;
     /* height: 100px; */
