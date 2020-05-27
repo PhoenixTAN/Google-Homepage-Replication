@@ -266,12 +266,7 @@ footer {
 }
 
 #floating-popup-apps {
-    /*
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    */
+
     position: absolute;
     top: 0; 
     right: 0;
@@ -313,15 +308,12 @@ footer {
    
 }
 
-#floating-popup-apps ul {
-    padding: 0 0 20px 12px;
+.google-apps-row {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#floating-popup-apps li {
-    display: inline-block;
-}
-
-#floating-popup-apps ul a {
+.google-apps-row a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -331,7 +323,7 @@ footer {
     height: 100px;
 }
 
-#floating-popup-apps ul a:hover {
+.google-apps-row a:hover {
     background-color:#f8f8ff;
 }
 
@@ -363,7 +355,6 @@ footer {
 .more-from-google {
     width: 100%;
     text-align: center;
-
 }
 
 #floating-popup-apps .more-from-google a {
@@ -389,7 +380,6 @@ footer {
 }
 
 #setting-floating-popup-modal {
-
     display: none;
     position: fixed;
     z-index: 10;
@@ -401,11 +391,6 @@ footer {
 }
 
 #setting-floating-popup {
-    /* display: none; */
-
-    /*position: fixed;
-    bottom: 30px;
-    right: 29px;*/
 
     position: absolute;
     bottom: 30px;
@@ -417,11 +402,6 @@ footer {
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,.2);
 
-}
-
-
-#setting-floating-popup {
-    
 }
 
 #setting-floating-popup a {

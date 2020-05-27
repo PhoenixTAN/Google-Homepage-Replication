@@ -54,13 +54,13 @@ document.onclick = function clearSearchPopup(event) {
     var searchPopup = document.getElementById("search-floating-popup");
     var position = searchPopup.getBoundingClientRect();
 
-    if ( clientX < position.left || clientX > position.right || 
-        clientY > position.bottom || clientY < position.top ) {
-        if ( isBlur ) {
-            searchPopup.style.display = "none";     
-            var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
-            searchBarWrap.style.borderRadius = "24px";
-        } 
+    if ( isBlur && (clientX < position.left || clientX > position.right || 
+        clientY > position.bottom || clientY < position.top) ) {
+        
+        searchPopup.style.display = "none";     
+        var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+        searchBarWrap.style.borderRadius = "24px";
+        
     }
 }
 
