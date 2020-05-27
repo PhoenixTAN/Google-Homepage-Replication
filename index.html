@@ -20,7 +20,7 @@
             </div>
 
             <div class="head-right-icons">  
-                <a class="head-right-google-apps" aria-expanded="false" role="button" onclick="showGoogleApps()">
+                <a class="head-right-google-apps" aria-expanded="false" role="button">
                     <img src="images/meun-icon.png" style="width: 30px; height: 30px;">
                 </a>
                 <a class="head-right-sign-in" role="button">
@@ -31,7 +31,6 @@
     </header>
 
     <div id="floating-popup-apps">
-
         <ul>
             <li>
                 <a href="#">
@@ -247,8 +246,16 @@
                 <input class="lucky-btn" type="submit" value="I'm Feeling Lucky"></input>                 
             </div>
         </form>
-        
     </main>
+        
+    <div id="setting-floating-popup">
+        <a>Search settings</a>
+        <a>Advanced search</a>
+        <a>Your data in Search</a>
+        <a>History</a>
+        <a>Search help</a>
+        <a>Send feedback</a>
+    </div>
 
     <footer>
         <div class="left-footbar">
@@ -259,15 +266,12 @@
         <div class="right-footbar">
             <a class="footer-link" href="#">Privacy</a>
             <a class="footer-link" href="#">Terms</a>
-            <a class="footer-link" href="#">Settings</a>
+            <a id="setting" class="footer-link" href="#">Settings</a>
         </div>
     </footer>
 
     <script src="script.js"></script>
 
-    <div id="container">
-        <div id="content"></div>
-    </div>
 </body>
 
 </html>
