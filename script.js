@@ -39,6 +39,10 @@ function showSearchPopup() {
     var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
     searchBarWrap.style.borderRadius = "24px 24px 0 0";
     isBlur = false;
+
+    searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+    searchBarWrap.removeEventListener("mouseout", hideSearchBarShadow);
+
 }
 
 searchTextBox.addEventListener("blur", function() {
@@ -58,12 +62,11 @@ document.onclick = function clearSearchPopup(event) {
         clientY > position.bottom || clientY < position.top) ) {
         
         searchPopup.style.display = "none";     
-        // var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
         searchBarWrap.style.borderRadius = "24px";
-        
+        searchBarWrap.style.boxShadow = "none";
+        searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
     }
 }
-
 
 /* mouseover for search box */
 searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
@@ -76,3 +79,4 @@ searchBarWrap.addEventListener("mouseout", hideSearchBarShadow);
 function hideSearchBarShadow() {
     searchBarWrap.style.boxShadow = "none";
 }
+
