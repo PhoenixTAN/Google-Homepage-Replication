@@ -40,7 +40,8 @@ function showSearchPopup() {
     searchBarWrap.style.borderRadius = "24px 24px 0 0";
     isBlur = false;
 
-    searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+    // searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+    searchBarWrap.style.boxShadow = "0 4px 6px 0 rgba(32,33,36,0.28)";
     searchBarWrap.removeEventListener("mouseout", hideSearchBarShadow);
 
 }
@@ -72,7 +73,8 @@ document.onclick = function clearSearchPopup(event) {
 searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
 function showSearchBarShadow() {
     /* offset-x | offset-y | blur-radius | spread-radius | color */ 
-    searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+    // searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+    searchBarWrap.style.boxShadow = "0 4px 6px 0 rgba(32,33,36,0.28)";
 }
 
 searchBarWrap.addEventListener("mouseout", hideSearchBarShadow);

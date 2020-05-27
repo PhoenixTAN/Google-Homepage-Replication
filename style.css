@@ -353,7 +353,6 @@ footer {
 }
 
 #floating-popup-apps .more-from-google a {
-    
     display: inline-block;
 
     background-color: #fff;
@@ -424,8 +423,8 @@ footer {
 
     background: #fff;
     border-radius: 0 0 24px 24px;
-    box-shadow: 0 4px 6px 0 rgba(32,33,36,0.28);
-
+    /* box-shadow: 0 4px 6px 0 rgba(32,33,36,0.28); */
+    box-shadow: 0 3px 3px 1px rgba(60,64,67,.30);
 }
 
 .try-searching-for {
