@@ -3,6 +3,8 @@ var googleAppsIcon = document.getElementById("head-right-google-apps");
 var googleAppsModal = document.getElementById("apps-modal");
 var setting = document.getElementById("setting");
 var settingPopupModal = document.getElementById("setting-floating-popup-modal");
+var searchTextBox = document.getElementById("search-text");
+searchTextBox.addEventListener("focus", showSearchPopup);
 
 /* EventListener */
 googleAppsIcon.addEventListener("click", showGoogleApps); 
@@ -28,27 +30,37 @@ function showSettingPopup() {
 
 }
 
-var searchTextBox = document.getElementById("search-text");
-searchTextBox.onfocus = function(event) {
+/* Event listener for search text */
+var isBlur = false;
+function showSearchPopup() {
     var searchPopup = document.getElementById("search-floating-popup");
     searchPopup.style.display = "block";
     
     var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
     searchBarWrap.style.borderRadius = "24px 24px 0 0";
-    
-    event.stopPropagation();
+    isBlur = false;
 }
 
+searchTextBox.addEventListener("blur", function() {
+    isBlur = true;
+});
 
-searchTextBox.onblur = function(event) {
+
+document.onclick = function clearSearchPopup(event) {
+
+    var clientX = event.clientX;
+    var clientY = event.clientY;
+
     var searchPopup = document.getElementById("search-floating-popup");
-    searchPopup.style.display = "none";
+    var position = searchPopup.getBoundingClientRect();
 
-    var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
-    searchBarWrap.style.borderRadius = "24px";
-    
-    event.stopPropagation();
+    if ( clientX < position.left || clientX > position.right || 
+        clientY > position.bottom || clientY < position.top ) {
+        if ( isBlur ) {
+            searchPopup.style.display = "none";     
+            var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+            searchBarWrap.style.borderRadius = "24px";
+        } 
+    }
 }
-
-
 
