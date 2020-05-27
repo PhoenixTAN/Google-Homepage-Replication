@@ -3,12 +3,13 @@ var googleAppsModal = document.getElementById("apps-modal");
 var setting = document.getElementById("setting");
 var settingPopupModal = document.getElementById("setting-floating-popup-modal");
 var searchTextBox = document.getElementById("search-text");
-searchTextBox.addEventListener("focus", showSearchPopup);
+var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
 
 /* EventListener */
 googleAppsIcon.addEventListener("click", showGoogleApps); 
 setting.addEventListener("click", showSettingPopup)
 document.addEventListener("click", clearPopup);
+searchTextBox.addEventListener("focus", showSearchPopup);
 
 
 function clearPopup(event) {
@@ -57,9 +58,21 @@ document.onclick = function clearSearchPopup(event) {
         clientY > position.bottom || clientY < position.top) ) {
         
         searchPopup.style.display = "none";     
-        var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+        // var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
         searchBarWrap.style.borderRadius = "24px";
         
     }
 }
 
+
+/* mouseover for search box */
+searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
+function showSearchBarShadow() {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */ 
+    searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
+}
+
+searchBarWrap.addEventListener("mouseout", hideSearchBarShadow);
+function hideSearchBarShadow() {
+    searchBarWrap.style.boxShadow = "none";
+}
