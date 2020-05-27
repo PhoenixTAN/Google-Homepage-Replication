@@ -1,4 +1,3 @@
-
 var googleAppsIcon = document.getElementById("head-right-google-apps");
 var googleAppsModal = document.getElementById("apps-modal");
 var setting = document.getElementById("setting");
