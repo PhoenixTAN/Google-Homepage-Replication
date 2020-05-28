@@ -109,39 +109,92 @@
     </div>
 
     <!-- 其实这里样式不一样 -->
-    <div class="top-right-modal" id="account-modal">
-        <div class="top-right-popup-content">
-            <div class="profile">
-                <!-- img profile -->
-                <!-- take photo img button -->
-                <span class="account-name">谭梓琦</span>
-                <span class="email">tanziqi1756@outlook.com</span>
-                <button>Manage your Google Account</button>
-            </div>
-            <hr>
-
-            <div class="other-accounts">
-                <div class="account">
-
-                </div>
-                <div class="add-another-account">
-
+    <div class="account-popup-content" id="account-profile">
+        <div class="profile">
+            <!-- img profile -->
+            <!-- take photo img button -->
+            <div class="portrait">
+                <div>
+                    <img src="images/apps-icons/profile.png">
+                    <div class="change-profile-cam">
+                        <a href="#">
+                            <svg enable-background="new 0 0 24 24" focusable="false" height="26" viewBox="0 0 24 24" width="18" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path d="M20 5h-3.17L15 3H9L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 14H4V7h16v12zM12 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <hr>
 
-            <button>Sign out</button>
-
-            <hr>
-
-            <div>
-                <a href="#">Privacy Policy</a>
-                •
-                <a href="#">Terms of Service</a>
-            </div>
+            
+            <div class="account-name">谭梓琦</div>
+            <div class="email">tanziqi1756@outlook.com</div>
+            <a class="manage-account" href="#">Manage your Google Account</a>
             
         </div>
+
+        <span class="line-seperator"></span>
+
+        <div class="other-accounts">
+            <div class="account" id="account1">
+                <img src="images/apps-icons/ziqi.png">
+                <div class="account-info">
+                    <div class="first-row">
+                        <div>Ziqi Tan</div>
+                        <div>Signed out</div>
+                    </div>
+                    <div class="second-row">
+                        <span>ziqi1756@bu.edu</span>
+                        <div class="arrow" id="arrow-popup">
+                            <svg focusable="false" height="20" viewBox="0 0 20 20" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path d="M0 0h20v20H0V0z" fill="none"></path>
+                                <path d="M6.18 7L10 10.82 13.82 7 15 8.17l-5 5-5-5z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="third-row-pop-up" id="sign-in-remove-popup">
+                        <div class="third-row">
+                            <a href="#">
+                                Sign in
+                            </a>
+                            <button>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <span class="line-seperator"></span>
+
+            <a class="add-another-account">
+                <div>
+                    <svg class="gb_Db" enable-background="new 0 0 24 24" focusable="false" height="20" viewBox="0 0 24 24" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"></path>
+                    </svg>
+                </div>
+                <div>Add another account</div>
+            </a>
+        </div>
+        
+        <span class="line-seperator"></span>
+        <div class="sign-out">
+            <a href="#">
+                Sign out
+            </a>
+        </div>
+        
+        <span class="line-seperator"></span>
+
+        <div class="foot">
+            <a href="#">Privacy Policy</a>
+            <span>•</span>
+            <a href="#">Terms of Service</a>
+        </div>
+        
     </div>
+    
 
     <div class="setting-modal-layer" id="setting-floating-popup-modal">
         <div class="setting-floating-popup">

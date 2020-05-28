@@ -4,15 +4,13 @@ var setting = document.getElementById("setting");
 var settingPopupModal = document.getElementById("setting-floating-popup-modal");
 var searchTextBox = document.getElementById("search-text");
 var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
-var signIn = document.getElementById("sign-in");
-var accountModal = document.getElementById("account-modal");
 
 /* EventListener */
 googleAppsIcon.addEventListener("click", showGoogleApps); 
 setting.addEventListener("click", showSettingPopup)
 document.addEventListener("click", clearPopup);
 searchTextBox.addEventListener("focus", showSearchPopup);
-signIn.addEventListener("click", showProfilePopup);
+
 
 function clearPopup(event) {
     if ( event.target == googleAppsModal ) {
@@ -21,9 +19,7 @@ function clearPopup(event) {
     else if ( event.target == settingPopupModal ) {
         settingPopupModal.style.display = "none";
     }
-    else if ( event.target == accountModal ) {
-        accountModal.style.display = "none";
-    }
+
 }
 
 function showGoogleApps() {
@@ -34,9 +30,6 @@ function showSettingPopup() {
     settingPopupModal.style.display = "block";
 }
 
-function showProfilePopup() {
-    accountModal.style.display = "block";
-}
 
 /* Event listener for search text */
 var isBlur = false;
@@ -89,3 +82,66 @@ function hideSearchBarShadow() {
     searchBarWrap.style.boxShadow = "none";
 }
 
+
+
+
+var account = document.getElementById("account1");
+account.addEventListener("click", showOrHideThridRow);
+
+function showOrHideThridRow() {
+    var arrow = document.getElementById("arrow-popup");
+    var thirdRow = document.getElementById("sign-in-remove-popup");
+    
+    /* 为什么这里换过来不行 */
+    /* 因为一开始这个sytle是空的值 */
+    console.log(thirdRow.style.display);
+    if ( thirdRow.style.display == "block" ) {
+        thirdRow.style.display = "none";
+        arrow.style.transform = "none";
+        account.style.background = "#fff";
+    }
+    else {
+        thirdRow.style.display = "block";
+        arrow.style.transform = "rotate(0.5turn)";
+        account.style.background = "rgba(60,64,67,0.1)";
+    }
+}
+
+
+
+var signIn = document.getElementById("sign-in");
+var accountProfile = document.getElementById("account-profile");
+
+signIn.addEventListener("click", showPopupProfile);
+
+function showPopupProfile(event) {
+    if ( accountProfile.style.display == "block" ) {
+        accountProfile.style.display = "none";
+    }
+    else {
+        accountProfile.style.display = "block";  
+        console.log("Here!");
+
+        event.stopPropagation();    /* 阻止事件冒泡汇报给上一级元素？ */
+
+        /*
+        document.addEventListener("click", function clearPopupProfile(event) {
+            hidePopupProfile(event);
+            document.removeEventListener("click", clearPopupProfile);
+        });
+        */
+    }
+}
+
+
+document.onclick = function hidePopupProfile(event) {
+    var clientX = event.clientX;
+    var clientY = event.clientY;
+
+    var position = accountProfile.getBoundingClientRect();
+    if ( clientX < position.left || clientX > position.right || 
+        clientY > position.bottom || clientY < position.top ) {
+        accountProfile.style.display = "none";    
+        console.log("There!");
+    }
+}
