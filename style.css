@@ -247,7 +247,7 @@ footer {
     color: #222;
 }
 
-#apps-modal {
+.apps-modal-layer {
     display: none;
     
     position: fixed;
@@ -260,33 +260,53 @@ footer {
     /* border: 1px solid black; */
 }
 
-#floating-popup-apps {
-
+.apps-popup-content {
     position: absolute;
     top: 0; 
     right: 0;
-    
+
     width: 340px;
     height: 468px;
-
     margin: 55px 27px 0 0;
 
-    border: 1px solid black;
-
-    overflow-y: scroll; /*  */
+    display: flex;
+    flex-direction: column;
 
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 2px 6px 2px rgba(60,64,67,.15);
     background: #fff;
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 8px;
+
+    overflow-y: scroll; /*  */
 }
 
-#floating-popup-apps::-webkit-scrollbar {
+.apps-icon-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.apps-icon-section a {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: rgba(0,0,0,0.87);
+    width: 100px;
+    height: 100px;
+}
+
+.apps-icon-section a:hover {
+    background-color:#f8f8ff;
+}
+
+.apps-popup-content::-webkit-scrollbar {
     width: 14px;
 }   
 
-#floating-popup-apps::-webkit-scrollbar-thumb {
-
+.apps-popup-content::-webkit-scrollbar-thumb {
     border: 4px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     border-radius: 7px;
@@ -300,36 +320,16 @@ footer {
     it will cause a padding effect matching the border's width. 
     Without that rule the background color would be visible through the border.
     */
-   
 }
 
-.google-apps-row {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.google-apps-row a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-decoration: none;
-    color: rgba(0,0,0,0.87);
-    width: 100px;
-    height: 100px;
-}
-
-.google-apps-row a:hover {
-    background-color:#f8f8ff;
-}
-
-#floating-popup-apps img {
+.apps-icon-section img {
     margin: 0 auto;
     padding: 6px;
     width: 52px;
     height: 52px;
 }
 
-#floating-popup-apps span {
+.apps-icon-section span {
     display: inline-block;
     text-align: center;
 
@@ -343,7 +343,7 @@ footer {
     text-overflow: ellipsis;
 }
 
-#floating-popup-apps span:hover {
+.apps-icon-section span:hover {
     white-space: normal;
 }
 
@@ -352,7 +352,7 @@ footer {
     text-align: center;
 }
 
-#floating-popup-apps .more-from-google a {
+.more-from-google a {
     display: inline-block;
 
     background-color: #fff;
@@ -366,13 +366,16 @@ footer {
     text-decoration: none;
 
     padding: 10px 24px;
+    
+    width: auto;
+    height: 16px;
 }
 
-#floating-popup-apps .more-from-google a:hover {
+.more-from-google a:hover {
     background-color:#f8f8ff;
 }
 
-#setting-floating-popup-modal {
+.setting-modal-layer {
     display: none;
     position: fixed;
     z-index: 1;
@@ -383,8 +386,7 @@ footer {
     height: 100%;   /* Full height */
 }
 
-#setting-floating-popup {
-
+.setting-floating-popup {
     position: absolute;
     bottom: 30px;
     right: 29px;
@@ -394,10 +396,9 @@ footer {
 
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,.2);
-
 }
 
-#setting-floating-popup a {
+.setting-floating-popup a {
     display: block;
     line-height: 44px;
     padding: 0 20px 0 21px;
@@ -408,12 +409,11 @@ footer {
     cursor: pointer;
 }
 
-#setting-floating-popup a:hover {
+.setting-floating-popup a:hover {
     text-decoration: underline;
 }
 
-
-#search-floating-popup {
+.search-popup-content {
     display: none;
     
     position: absolute;

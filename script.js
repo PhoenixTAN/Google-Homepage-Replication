@@ -27,7 +27,6 @@ function showGoogleApps() {
 
 function showSettingPopup() {
     settingPopupModal.style.display = "block";
-
 }
 
 /* Event listener for search text */
@@ -40,7 +39,6 @@ function showSearchPopup() {
     searchBarWrap.style.borderRadius = "24px 24px 0 0";
     isBlur = false;
 
-    // searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
     searchBarWrap.style.boxShadow = "0 4px 6px 0 rgba(32,33,36,0.28)";
     searchBarWrap.removeEventListener("mouseout", hideSearchBarShadow);
 
@@ -48,10 +46,11 @@ function showSearchPopup() {
 
 searchTextBox.addEventListener("blur", function() {
     isBlur = true;
+    /* 比如说点击搜索框的时候 是点击的目标区域外 所以不应该删掉popup window */
 });
 
-
-document.onclick = function clearSearchPopup(event) {
+/* make the search popup window disappear */
+document.addEventListener("click", function clearSearchPopup(event) {
 
     var clientX = event.clientX;
     var clientY = event.clientY;
@@ -61,22 +60,21 @@ document.onclick = function clearSearchPopup(event) {
 
     if ( isBlur && (clientX < position.left || clientX > position.right || 
         clientY > position.bottom || clientY < position.top) ) {
-        
         searchPopup.style.display = "none";     
         searchBarWrap.style.borderRadius = "24px";
         searchBarWrap.style.boxShadow = "none";
         searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
+        searchBarWrap.addEventListener("mouseout", hideSearchBarShadow);
     }
-}
+});
 
 /* mouseover for search box */
 searchBarWrap.addEventListener("mouseover", showSearchBarShadow);
 function showSearchBarShadow() {
-    /* offset-x | offset-y | blur-radius | spread-radius | color */ 
-    // searchBarWrap.style.boxShadow = "0 1px 3px 1px rgba(60,64,67,.30)";
     searchBarWrap.style.boxShadow = "0 4px 6px 0 rgba(32,33,36,0.28)";
 }
 
+/* mouseout for search box */
 searchBarWrap.addEventListener("mouseout", hideSearchBarShadow);
 function hideSearchBarShadow() {
     searchBarWrap.style.boxShadow = "none";
