@@ -19,10 +19,10 @@
             </div>
 
             <div class="head-right-icons">  
-                <a id="head-right-google-apps" aria-expanded="false" role="button">
+                <a id="head-right-google-apps">
                     <img src="images/meun-icon.png" style="width: 30px; height: 30px;">
                 </a>
-                <a class="head-right-sign-in" role="button">
+                <a class="head-right-sign-in" id="sign-in">
                     Sign in
                 </a>
             </div>
@@ -95,16 +95,51 @@
     </footer>
 
 
-    <div class="apps-modal-layer" id="apps-modal">
-        <div class="apps-popup-content">
+    <div class="top-right-modal" id="apps-modal">
+        <div class="top-right-popup-content">
             <div class="apps-icon-section" id="apps-popup-section1"></div>
-            <span style="border-bottom: 1px solid #e8eaed; display: block; padding-top: 10px;"></span>
+            <hr>
             <div class="apps-icon-section" id="apps-popup-section2"></div>
             <div class="more-from-google">
                 <a href="#">
                     More from Google
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- 其实这里样式不一样 -->
+    <div class="top-right-modal" id="account-modal">
+        <div class="top-right-popup-content">
+            <div class="profile">
+                <!-- img profile -->
+                <!-- take photo img button -->
+                <span class="account-name">谭梓琦</span>
+                <span class="email">tanziqi1756@outlook.com</span>
+                <button>Manage your Google Account</button>
+            </div>
+            <hr>
+
+            <div class="other-accounts">
+                <div class="account">
+
+                </div>
+                <div class="add-another-account">
+
+                </div>
+            </div>
+            <hr>
+
+            <button>Sign out</button>
+
+            <hr>
+
+            <div>
+                <a href="#">Privacy Policy</a>
+                •
+                <a href="#">Terms of Service</a>
+            </div>
+            
         </div>
     </div>
 

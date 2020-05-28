@@ -4,20 +4,25 @@ var setting = document.getElementById("setting");
 var settingPopupModal = document.getElementById("setting-floating-popup-modal");
 var searchTextBox = document.getElementById("search-text");
 var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+var signIn = document.getElementById("sign-in");
+var accountModal = document.getElementById("account-modal");
 
 /* EventListener */
 googleAppsIcon.addEventListener("click", showGoogleApps); 
 setting.addEventListener("click", showSettingPopup)
 document.addEventListener("click", clearPopup);
 searchTextBox.addEventListener("focus", showSearchPopup);
-
+signIn.addEventListener("click", showProfilePopup);
 
 function clearPopup(event) {
     if ( event.target == googleAppsModal ) {
         googleAppsModal.style.display = "none";
     }
-    if ( event.target == settingPopupModal ) {
+    else if ( event.target == settingPopupModal ) {
         settingPopupModal.style.display = "none";
+    }
+    else if ( event.target == accountModal ) {
+        accountModal.style.display = "none";
     }
 }
 
@@ -27,6 +32,10 @@ function showGoogleApps() {
 
 function showSettingPopup() {
     settingPopupModal.style.display = "block";
+}
+
+function showProfilePopup() {
+    accountModal.style.display = "block";
 }
 
 /* Event listener for search text */

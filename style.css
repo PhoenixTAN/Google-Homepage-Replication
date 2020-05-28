@@ -15,6 +15,11 @@ a:hover {
     text-decoration: underline;
 }
 
+hr {
+    border-top: 1px solid #e8eaed;
+    margin: 20px 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -247,7 +252,7 @@ footer {
     color: #222;
 }
 
-.apps-modal-layer {
+.top-right-modal {
     display: none;
     
     position: fixed;
@@ -260,7 +265,7 @@ footer {
     /* border: 1px solid black; */
 }
 
-.apps-popup-content {
+.top-right-popup-content {
     position: absolute;
     top: 0; 
     right: 0;
@@ -302,11 +307,11 @@ footer {
     background-color:#f8f8ff;
 }
 
-.apps-popup-content::-webkit-scrollbar {
+.top-right-popup-content::-webkit-scrollbar {
     width: 14px;
 }   
 
-.apps-popup-content::-webkit-scrollbar-thumb {
+.top-right-popup-content::-webkit-scrollbar-thumb {
     border: 4px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     border-radius: 7px;
@@ -321,6 +326,8 @@ footer {
     Without that rule the background color would be visible through the border.
     */
 }
+
+
 
 .apps-icon-section img {
     margin: 0 auto;
