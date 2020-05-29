@@ -1,37 +1,51 @@
+/* Event listener for goole apps popup window */
 var googleAppsIcon = document.getElementById("head-right-google-apps");
-var googleAppsModal = document.getElementById("apps-modal");
+var googleAppsPopup = document.getElementById("apps-popup");
+
+googleAppsIcon.addEventListener("click", showGoogleAppsPopup);
+googleAppsPopup.addEventListener("click", function stopClickPropagation(event) { event.stopPropagation() });
+
+function showGoogleAppsPopup() {
+    if ( googleAppsPopup.style.display == "block" ) {
+        googleAppsPopup.style.display = "none";
+    }
+    else {
+        googleAppsPopup.style.display = "block";
+        event.stopPropagation();
+        document.addEventListener("click", function clearAppsPopup() {
+            googleAppsPopup.style.display = "none";
+            document.removeEventListener("click", clearAppsPopup);
+        });
+    }
+}
+
+/* Event listener for setting */
 var setting = document.getElementById("setting");
-var settingPopupModal = document.getElementById("setting-floating-popup-modal");
-var searchTextBox = document.getElementById("search-text");
-var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+var settingPopup = document.getElementById("setting-floating-popup");
 
 /* EventListener */
-googleAppsIcon.addEventListener("click", showGoogleApps); 
 setting.addEventListener("click", showSettingPopup)
-document.addEventListener("click", clearPopup);
-searchTextBox.addEventListener("focus", showSearchPopup);
-
-
-function clearPopup(event) {
-    if ( event.target == googleAppsModal ) {
-        googleAppsModal.style.display = "none";
-    }
-    else if ( event.target == settingPopupModal ) {
-        settingPopupModal.style.display = "none";
-    }
-
-}
-
-function showGoogleApps() {
-   googleAppsModal.style.display = "block";
-}
+settingPopup.addEventListener("click", function stopClickPropagation(event) { event.stopPropagation()} );
 
 function showSettingPopup() {
-    settingPopupModal.style.display = "block";
+    if ( settingPopup.style.display == "block" ) {
+        settingPopup.style.display = "none";
+    }
+    else {
+        settingPopup.style.display = "block";
+        event.stopPropagation();
+        document.addEventListener("click", function clearSettingPopup() {
+            settingPopup.style.display = "none";
+            document.removeEventListener("click", clearSettingPopup);
+        });
+    }
 }
 
-
 /* Event listener for search text */
+var searchTextBox = document.getElementById("search-text");
+var searchBarWrap = document.getElementsByClassName("search-bar-wrap")[0];
+searchTextBox.addEventListener("focus", showSearchPopup);
+
 var isBlur = false;
 function showSearchPopup() {
     var searchPopup = document.getElementById("search-floating-popup");
@@ -82,19 +96,14 @@ function hideSearchBarShadow() {
     searchBarWrap.style.boxShadow = "none";
 }
 
-
-
-
-var account = document.getElementById("account1");
+/* Add listener to show the sign out button and remove button */
+var account = document.getElementById("account");
 account.addEventListener("click", showOrHideThridRow);
 
 function showOrHideThridRow() {
     var arrow = document.getElementById("arrow-popup");
     var thirdRow = document.getElementById("sign-in-remove-popup");
-    
-    /* 为什么这里换过来不行 */
-    /* 因为一开始这个sytle是空的值 */
-    console.log(thirdRow.style.display);
+
     if ( thirdRow.style.display == "flex" ) {
         thirdRow.style.display = "none";
         arrow.style.transform = "none";
@@ -107,40 +116,24 @@ function showOrHideThridRow() {
     }
 }
 
-
-
+/* Add listener to Sign in */ 
 var signIn = document.getElementById("sign-in");
 var accountProfile = document.getElementById("account-profile");
 
 signIn.addEventListener("click", showPopupProfile);
+accountProfile.addEventListener("click", function stopClickPropagation(event) { event.stopPropagation() } );
 
-function showPopupProfile(event) {
+function showPopupProfile() {
     if ( accountProfile.style.display == "block" ) {
-        accountProfile.style.display = "none";
+        accountProfile.style.display = "none";  
     }
     else {
         accountProfile.style.display = "block";  
-        console.log("Here!");
-
-        event.stopPropagation();    /* 阻止事件冒泡汇报给上一级元素？ */
-
-        /*document.addEventListener("click", function clearPopupProfile(event) {
-            hidePopupProfile(event);
+        event.stopPropagation();    /* 阻止事件冒泡汇报给上一级元素 */
+        document.addEventListener("click", function clearPopupProfile() {
+            accountProfile.style.display = "none";    
             document.removeEventListener("click", clearPopupProfile);
-        });*/
-        
+        });
     }
 }
 
-
-document.onclick = function hidePopupProfile(event) {
-    var clientX = event.clientX;
-    var clientY = event.clientY;
-
-    var position = accountProfile.getBoundingClientRect();
-    if ( clientX < position.left || clientX > position.right || 
-        clientY > position.bottom || clientY < position.top ) {
-        accountProfile.style.display = "none";    
-        console.log("There!");
-    }
-}

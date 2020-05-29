@@ -78,23 +78,19 @@
     </footer>
 
     <!-- border-radius -->
-    <div class="top-right-modal" id="apps-modal">
-        <div class="top-right-popup-content flexbox">
-            <div class="apps-icon-section" id="apps-popup-section1">
-                <!-- icons will be added here by javascript -->
-            </div>
-            <hr>
-            <div class="apps-icon-section" id="apps-popup-section2">
-                <!-- icons will be added here by javascript -->
-            </div>
-            <div class="more-from-google">
-                <a href="#">
-                    More from Google
-                </a>
-            </div>
-        </div>
-    </div>
 
+    <div class="top-right-popup-content flexbox" id="apps-popup">
+        <div class="apps-icon-section flexbox" id="apps-popup-section1">
+            <!-- icons will be added here by javascript -->
+        </div>
+        <hr>
+        <div class="apps-icon-section flexbox" id="apps-popup-section2">
+            <!-- icons will be added here by javascript -->
+        </div>
+        <a class="more-from-google" href="#">
+            More from Google
+        </a>
+    </div>
 
     <div class="account-popup-content" id="account-profile">
         <div class="profile flexbox">
@@ -110,24 +106,22 @@
                     </a>
                 </div>
             </div>
-
             <div class="account-name">谭梓琦</div>
             <div class="email">tanziqi1756@outlook.com</div>
             <a class="manage-account" href="#">Manage your Google Account</a>
-            
         </div>
 
         <span class="line-seperator"></span>
 
         <div class="other-accounts">
-            <div class="account" id="account1">
+            <div class="account flexbox" id="account">
                 <img src="images/apps-icons/ziqi.png">
                 <div class="account-info">
-                    <div class="first-row">
+                    <div class="first-row flexbox">
                         <div>Ziqi Tan</div>
                         <div>Signed out</div>
                     </div>
-                    <div class="second-row">
+                    <div class="second-row flexbox">
                         <span>ziqi1756@bu.edu</span>
                         <!-- svg 位置不对  -->
                         <!-- manage your account hover -->
@@ -151,18 +145,15 @@
                 </div>
             </div>
 
-            <a class="add-another-account">
+            <a class="add-another-account flexbox">
                 <svg class="add-account-icon" enable-background="new 0 0 24 24" focusable="false" height="20" viewBox="0 0 24 24" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"></path>
                 </svg>
-                
                 <div>Add another account</div>
             </a>
         </div>
 
-        <!-- 这里用border bottom -->
         <span class="line-seperator"></span>
-        <!-- 改一下 -->
 
         <a class="sign-out" href="#">
             Sign out
@@ -170,24 +161,21 @@
 
         <span class="line-seperator"></span>
 
-        <div class="foot">
+        <footer class="flexbox">
             <a href="#">Privacy Policy</a>
             <span>•</span>
             <a href="#">Terms of Service</a>
-        </div>
+        </footer>
         
     </div>
     
-    <!-- 删掉一层 -->
-    <div class="setting-modal-layer" id="setting-floating-popup-modal">
-        <div class="setting-floating-popup">
-            <a>Search settings</a>
-            <a>Advanced search</a>
-            <a>Your data in Search</a>
-            <a>History</a>
-            <a>Search help</a>
-            <a>Send feedback</a>
-        </div>
+    <div class="setting-floating-popup" id="setting-floating-popup">
+        <a>Search settings</a>
+        <a>Advanced search</a>
+        <a>Your data in Search</a>
+        <a>History</a>
+        <a>Search help</a>
+        <a>Send feedback</a>
     </div>
 
     <!-- pop up contents -->
