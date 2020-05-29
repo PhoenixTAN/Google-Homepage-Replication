@@ -7,73 +7,56 @@
 </head>
 
 <body>
-    <header>
-        <div class="head-left">
-            <a href="#">About</a>
-            <a href="#">Store</a>
-        </div>
-        <div class="head-right">
-            <div class="head-right-links">
-                <a href="#">Gmail</a>
-                <a href="#">Images</a>
-            </div>
 
-            <div class="head-right-icons">  
-                <a id="head-right-google-apps">
-                    <img src="images/meun-icon.png" style="width: 30px; height: 30px;">
-                </a>
-                <a class="head-right-sign-in" id="sign-in">
-                    Sign in
-                </a>
-            </div>
-        </div>
+    <header class="flexbox">
+        <a class="head-left" href="#">About</a>
+        <a class="head-left" href="#">Store</a>
+        <div class="empty-box"></div>
+        <a class="head-right-links" href="#">Gmail</a>
+        <a class="head-right-links" href="#">Images</a>
+        
+        <img class="head-right-google-apps" id="head-right-google-apps" src="images/meun-icon.png">
+        <button class="head-right-sign-in" id="sign-in">
+            Sign in
+        </button>
     </header>
     
     <main class="container">
-        <div class="main-image-container">
-            <img src="images/googlelogo.png">
-        </div>
-        
+        <img class="google-logo" src="images/googlelogo.png">
         <form class="submit-form" method="GET">
-
-            <div class="search-bar-wrap">
+            <div class="search-bar-wrap flexbox">
                 <!-- left search icon -->
-                <div class="left-search-icon">
-                    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                    </svg>
-                </div>
-                
+                <svg class="left-search-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
                 <!-- search bar -->
                 <input id="search-text" type="text">
                 <div class="search-popup-content" id="search-floating-popup">
                     <div class="try-searching-for">
                         Try search for
                     </div>
-                    <!-- search history will be added here -->
-                    
-                    <div class="submitbar-wrap" id="submitbar">
+                    <!-- search history -->
+                    <div id="search-history">
+                        <!-- search history will be added here by javascript -->
+                    </div>
+                    <!-- submit bar -->
+                    <div class="submitbar-wrap flexbox">
                         <input class="google-search-btn" type="submit" value="Google Search"></input>
                         <input class="lucky-btn" type="submit" value="I'm Feeling Lucky"></input>                 
                     </div>
-
-                    <div class="report-inappropriate-predictions">
-                        <a href="#">Report inappropriate predictions</a>
-                    </div>
-
+                    <a class="report-inappropriate-predictions" href="#">Report inappropriate predictions</a>
                 </div>
 
                 <!-- right microphone icon --> 
-                <div class="right-microphone-icon">
-                    <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z" fill="#4285f4"></path><path d="m11 18.08h2v3.92h-2z" fill="#34a853"></path>
-                        <path d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z" fill="#f4b400"></path>
-                        <path d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z" fill="#ea4335"></path>
-                    </svg>
-                </div>
+                <svg class="right-microphone-icon" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z" fill="#4285f4"></path><path d="m11 18.08h2v3.92h-2z" fill="#34a853"></path>
+                    <path d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z" fill="#f4b400"></path>
+                    <path d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z" fill="#ea4335"></path>
+                </svg>
             </div>
 
-            <div class="submitbar-wrap">
+            <!-- submit bar -->
+            <div class="submitbar-wrap flexbox">
                 <input class="google-search-btn" type="submit" value="Google Search"></input>
                 <input class="lucky-btn" type="submit" value="I'm Feeling Lucky"></input>                 
             </div>
@@ -81,25 +64,29 @@
         
     </main>
 
-    <footer>
-        <div class="left-footbar">
-            <a class="footer-link" href="#">Advertising</a>
-            <a class="footer-link" href="#">Business</a>
-            <a class="footer-link" href="#">How Search works</a>
-        </div>
-        <div class="right-footbar">
-            <a class="footer-link" href="#">Privacy</a>
-            <a class="footer-link" href="#">Terms</a>
-            <a id="setting" class="footer-link" href="#">Settings</a>
-        </div>
+    <!-- footer -->
+    <footer class="flexbox">
+        <a class="footer-link" href="#">Advertising</a>
+        <a class="footer-link" href="#">Business</a>
+        <a class="footer-link" href="#">How Search works</a>
+        
+        <div class="empty-box"></div>
+
+        <a class="footer-link" href="#">Privacy</a>
+        <a class="footer-link" href="#">Terms</a>
+        <a class="footer-link" id="setting" href="#">Settings</a>
     </footer>
 
-
+    <!-- border-radius -->
     <div class="top-right-modal" id="apps-modal">
-        <div class="top-right-popup-content">
-            <div class="apps-icon-section" id="apps-popup-section1"></div>
+        <div class="top-right-popup-content flexbox">
+            <div class="apps-icon-section" id="apps-popup-section1">
+                <!-- icons will be added here by javascript -->
+            </div>
             <hr>
-            <div class="apps-icon-section" id="apps-popup-section2"></div>
+            <div class="apps-icon-section" id="apps-popup-section2">
+                <!-- icons will be added here by javascript -->
+            </div>
             <div class="more-from-google">
                 <a href="#">
                     More from Google
@@ -108,25 +95,22 @@
         </div>
     </div>
 
-    <!-- 其实这里样式不一样 -->
+
     <div class="account-popup-content" id="account-profile">
-        <div class="profile">
-            <!-- img profile -->
-            <!-- take photo img button -->
-            <div class="portrait">
-                <div>
-                    <img src="images/apps-icons/profile.png">
-                    <div class="change-profile-cam">
-                        <a href="#">
-                            <svg enable-background="new 0 0 24 24" focusable="false" height="26" viewBox="0 0 24 24" width="18" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <path d="M20 5h-3.17L15 3H9L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 14H4V7h16v12zM12 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
-                            </svg>
-                        </a>
-                    </div>
+        <div class="profile flexbox">
+            <div class="portrait">    
+                <img src="images/apps-icons/profile.png">
+                <!-- We need nested tag here, because there are different layers. -->
+                <div class="change-profile-cam flexbox">
+                    <!-- take photo img button -->
+                    <a href="#">
+                        <svg enable-background="new 0 0 24 24" focusable="false" height="26" viewBox="0 0 24 24" width="18" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path d="M20 5h-3.17L15 3H9L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 14H4V7h16v12zM12 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
-            
             <div class="account-name">谭梓琦</div>
             <div class="email">tanziqi1756@outlook.com</div>
             <a class="manage-account" href="#">Manage your Google Account</a>
@@ -145,6 +129,9 @@
                     </div>
                     <div class="second-row">
                         <span>ziqi1756@bu.edu</span>
+                        <!-- svg 位置不对  -->
+                        <!-- manage your account hover -->
+                        <!-- 点击回来之后 就不变色了 -->
                         <div class="arrow" id="arrow-popup">
                             <svg focusable="false" height="20" viewBox="0 0 20 20" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path d="M0 0h20v20H0V0z" fill="none"></path>
@@ -152,39 +139,35 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="third-row-pop-up" id="sign-in-remove-popup">
-                        <div class="third-row">
-                            <a href="#">
-                                Sign in
-                            </a>
-                            <button>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                    
+
+                    <div class="third-row" id="sign-in-remove-popup">
+                        <a href="#">
+                            Sign in
+                        </a>
+                        <button>
+                            Remove
+                        </button>
+                    </div>       
                 </div>
             </div>
 
-            
-
             <a class="add-another-account">
-                <div>
-                    <svg class="gb_Db" enable-background="new 0 0 24 24" focusable="false" height="20" viewBox="0 0 24 24" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"></path>
-                    </svg>
-                </div>
+                <svg class="add-account-icon" enable-background="new 0 0 24 24" focusable="false" height="20" viewBox="0 0 24 24" width="20" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 7c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1zm3-4v-3h-3V9h3V6h2v3h3v2h-3v3h-2z"></path>
+                </svg>
+                
                 <div>Add another account</div>
             </a>
         </div>
-        
+
+        <!-- 这里用border bottom -->
         <span class="line-seperator"></span>
-        <div class="sign-out">
-            <a href="#">
-                Sign out
-            </a>
-        </div>
-        
+        <!-- 改一下 -->
+
+        <a class="sign-out" href="#">
+            Sign out
+        </a>
+
         <span class="line-seperator"></span>
 
         <div class="foot">
@@ -195,7 +178,7 @@
         
     </div>
     
-
+    <!-- 删掉一层 -->
     <div class="setting-modal-layer" id="setting-floating-popup-modal">
         <div class="setting-floating-popup">
             <a>Search settings</a>

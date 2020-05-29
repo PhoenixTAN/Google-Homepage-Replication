@@ -130,9 +130,10 @@ function addIcons(dataSection, targetArea) {
     for ( var i = 0; i < dataSection.length; i++ ) {
         var aTag = document.createElement("a");
         aTag.setAttribute("href", "#");
-    
-        var src = dataSection[i]['image'];
-        var name = dataSection[i]['name'];
+        
+
+        var src = dataSection[i].image;
+        var name = dataSection[i].name;
     
         var imgTag = document.createElement("img");
         imgTag.setAttribute("src",src);

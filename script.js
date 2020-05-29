@@ -95,13 +95,13 @@ function showOrHideThridRow() {
     /* 为什么这里换过来不行 */
     /* 因为一开始这个sytle是空的值 */
     console.log(thirdRow.style.display);
-    if ( thirdRow.style.display == "block" ) {
+    if ( thirdRow.style.display == "flex" ) {
         thirdRow.style.display = "none";
         arrow.style.transform = "none";
         account.style.background = "#fff";
     }
     else {
-        thirdRow.style.display = "block";
+        thirdRow.style.display = "flex";
         arrow.style.transform = "rotate(0.5turn)";
         account.style.background = "rgba(60,64,67,0.1)";
     }
@@ -124,12 +124,11 @@ function showPopupProfile(event) {
 
         event.stopPropagation();    /* 阻止事件冒泡汇报给上一级元素？ */
 
-        /*
-        document.addEventListener("click", function clearPopupProfile(event) {
+        /*document.addEventListener("click", function clearPopupProfile(event) {
             hidePopupProfile(event);
             document.removeEventListener("click", clearPopupProfile);
-        });
-        */
+        });*/
+        
     }
 }
 
