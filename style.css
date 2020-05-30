@@ -125,8 +125,7 @@ body > footer a {
     position: relative;     /* setup for search popup window*/
 }
 
-/* 这里改成class */
-#search-text {
+.search-text {
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     line-height: 34px;
@@ -189,22 +188,8 @@ body > footer a {
     border: 1px solid #c6c6c6;
     color: #222;
 }
-/*
-.top-right-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    
-}*/
 
-.top-right-popup-content hr {
-    border-top: 1px solid #e8eaed;
-    margin: 20px 0;
-}
-
-.top-right-popup-content {
+.google-apps-popup {
     display: none;
     position: absolute;
     top: 55px; 
@@ -217,7 +202,12 @@ body > footer a {
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 8px;
     overflow-y: scroll;
-    z-index: 1; /* Sit on top */
+    z-index: 1;     /* Sit on top */
+}
+
+.google-apps-popup hr {
+    border-top: 1px solid #e8eaed;
+    margin-bottom: 5px;
 }
 
 .account-popup-content {
@@ -328,7 +318,6 @@ body > footer a {
     max-width: 254px;
     padding: 8px 16px;
     text-align: center;
-    text-decoration: none;
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -397,7 +386,6 @@ body > footer a {
 .arrow {
     display: inline-block;
     height: 20px;
-    /* transform: none; */
 }
 
 .third-row {
@@ -419,8 +407,6 @@ body > footer a {
     padding: 10px 24px;
     margin-top: 14px;
     margin-right: 12px;
-    text-decoration: none;
-    
 }
 
 .third-row a:hover {
@@ -434,22 +420,16 @@ body > footer a {
     background-color: #ffffff;
     border: 1px solid #dadce0;
     color: #3c4043;
-
     display: inline-block;
-
     font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: .25px;
     line-height: 16px;
-    
     border-radius: 4px;
     padding: 10px 24px;
-
     margin-top: 14px;
-
     text-decoration: none;
-
     cursor: pointer;
 }
 
@@ -463,10 +443,8 @@ body > footer a {
 
 .add-another-account {
     cursor: pointer;
-
     justify-content: flex-start;
     align-items: center;
-
     padding: 14px 42px;
 }
 
@@ -475,8 +453,8 @@ body > footer a {
 }
 
 .add-another-account:hover {
-    text-decoration: none;
     background-color: #f7f8f8;
+    text-decoration: none;
 }
 
 .add-another-account div:nth-child(2) {
@@ -538,27 +516,30 @@ body > footer a {
 .apps-icon-section {
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding: 17px 0 20px 12px;
 }
 
 .apps-icon-section a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    text-decoration: none;
     color: rgba(0,0,0,0.87);
     width: 100px;
     height: 100px;
+    padding-left: 3px;
 }
 
 .apps-icon-section a:hover {
-    background-color:#f8f8ff;
+    text-decoration: none;
+    background-color: #f6fafe;
+    border-radius: 8px;
 }
 
-.top-right-popup-content::-webkit-scrollbar {
+.google-apps-popup::-webkit-scrollbar {
     width: 14px;
 }   
 
-.top-right-popup-content::-webkit-scrollbar-thumb {
+.google-apps-popup::-webkit-scrollbar-thumb {
     border: 4px solid rgba(0, 0, 0, 0);
     background-clip: padding-box;
     border-radius: 7px;
@@ -598,23 +579,22 @@ body > footer a {
 }
 
 .more-from-google {
-    display: inline-block;
+    display: block;
     background-color: #fff;
     border: 1px solid #dadce0;
     border-radius: 4px;
     color: #1a73e8;
     font: 14px/16px Arial,sans-serif;
     margin: 16px auto 20px auto;
-    text-decoration: none;
     padding: 10px 24px;
     width: 113px;
     height: 16px;
 }
 
-.more-from-google a:hover {
+.more-from-google:hover {
     background-color:#f8f8ff;
+    text-decoration: none;
 }
-
 
 .setting-floating-popup {
     display: none;
@@ -633,7 +613,6 @@ body > footer a {
     line-height: 44px;
     padding: 0 20px 0 21px;
     margin: 2px 10px 0;
-    text-decoration: none;
     font-size: 14px;
     color: #5f6368;
     cursor: pointer;

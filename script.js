@@ -11,6 +11,7 @@ function showGoogleAppsPopup() {
     }
     else {
         googleAppsPopup.style.display = "block";
+        accountProfile.style.display = "none";
         event.stopPropagation();
         document.addEventListener("click", function clearAppsPopup() {
             googleAppsPopup.style.display = "none";
@@ -99,6 +100,16 @@ function hideSearchBarShadow() {
 /* Add listener to show the sign out button and remove button */
 var account = document.getElementById("account");
 account.addEventListener("click", showOrHideThridRow);
+account.addEventListener("mouseover", addBackgroundToAccount);
+account.addEventListener("mouseout", removeBackgroundOfAccount);
+
+function addBackgroundToAccount() {
+    account.style.background = "#f7f8f8";
+}
+
+function removeBackgroundOfAccount() {
+    account.style.background = "#fff";
+}
 
 function showOrHideThridRow() {
     var arrow = document.getElementById("arrow-popup");
@@ -108,20 +119,27 @@ function showOrHideThridRow() {
         thirdRow.style.display = "none";
         arrow.style.transform = "none";
         account.style.background = "#fff";
+        account.addEventListener("mouseover", addBackgroundToAccount);
+        account.addEventListener("mouseout", removeBackgroundOfAccount);
     }
     else {
         thirdRow.style.display = "flex";
         arrow.style.transform = "rotate(0.5turn)";
         account.style.background = "rgba(60,64,67,0.1)";
+        // account.removeEventListener();
+        account.removeEventListener("mouseover", addBackgroundToAccount);
+        account.removeEventListener("mouseout", removeBackgroundOfAccount);
     }
 }
+
 
 /* Add listener to Sign in */ 
 var signIn = document.getElementById("sign-in");
 var accountProfile = document.getElementById("account-profile");
 
 signIn.addEventListener("click", showPopupProfile);
-accountProfile.addEventListener("click", function stopClickPropagation(event) { event.stopPropagation() } );
+accountProfile.addEventListener("click", function stopClickPropagation(event) 
+{ event.stopPropagation() } );
 
 function showPopupProfile() {
     if ( accountProfile.style.display == "block" ) {
@@ -129,6 +147,7 @@ function showPopupProfile() {
     }
     else {
         accountProfile.style.display = "block";  
+        googleAppsPopup.style.display = "none";
         event.stopPropagation();    /* 阻止事件冒泡汇报给上一级元素 */
         document.addEventListener("click", function clearPopupProfile() {
             accountProfile.style.display = "none";    
@@ -136,4 +155,7 @@ function showPopupProfile() {
         });
     }
 }
+
+
+
 
