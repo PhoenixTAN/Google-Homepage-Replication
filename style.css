@@ -533,7 +533,7 @@ body > footer a {
     text-decoration: none;
     background-color: #f6fafe;
     border-radius: 8px;
-}
+} 
 
 .google-apps-popup::-webkit-scrollbar {
     width: 14px;
@@ -544,15 +544,6 @@ body > footer a {
     background-clip: padding-box;
     border-radius: 7px;
     background-color: rgba(0, 0, 0, 0.15);
-    /*
-    For anyone wondering, 
-    the magic here is background-clip: padding-box 
-    which causes the border of the element to be cut off 
-    (along with the background color under it), 
-    so by setting the border to a fully transparent color 
-    it will cause a padding effect matching the border's width. 
-    Without that rule the background color would be visible through the border.
-    */
 }
 
 .apps-icon-section img {
