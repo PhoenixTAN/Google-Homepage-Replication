@@ -1,0 +1,54 @@
+header {
+  margin-top: 16px;
+  padding: 0 6px;
+  align-items: center;
+}
+
+header a {
+  display: inline-block;
+}
+
+.head-left {
+  padding-left: 19px;
+  padding-bottom: 1px;
+  color: #000;
+  opacity: 0.75;
+}
+
+.head-left:hover {
+  text-decoration: none;
+}
+
+.head-right-links {
+  padding-left: 15px;
+  color: rgba(0,0,0,0.87);
+  line-height: 24px;
+}
+
+.head-right-google-apps {
+  display: inline-block;
+  cursor: pointer;
+  padding: 4px 5px;
+  margin-left: 14px;
+  margin-right: 13px;
+}
+
+.head-right-sign-in {
+  display: block;
+  cursor: default;
+  color: #fff;
+  border: 1px solid #4285f4;
+  font-weight: bold;
+  outline: none;  /* right outside the border */
+  background: -webkit-linear-gradient(top,#4387fd,#4683ea);
+  font-size: 13px;
+  margin-right: 24px;
+  padding: 0 12px;
+  border-radius: 2px;
+  line-height: 28px;
+}
+
+.head-right-sign-in:hover {
+  text-decoration: none;
+}
+
