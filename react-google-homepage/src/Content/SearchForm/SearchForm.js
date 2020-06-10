@@ -1,0 +1,41 @@
+import React, {Component} from 'react';
+import './SearchForm.css'
+import SearchIcon from '../Components/SearchIcon/SearchIcon.js';
+import Input from '../Components/Input/Input.js';
+import MicrophoneIcon from '../Components/MicrophoneIcon/MicrophoneIcon.js'
+
+class SearchForm extends Component {
+
+    render() {
+        return (
+            <form className="search-form">
+                <div className="search-bar-wrap flexbox">
+                    <SearchIcon/>
+                    <Input
+                        class="searchText"
+                        type="text"
+                        value=""
+                    > 
+                    </Input>
+                    <MicrophoneIcon/>
+                </div>
+                <div className="submitbar-wrap flexbox"> 
+                    <Input
+                        class="google-search-btn" 
+                        type="submit" 
+                        value="Google Search"
+                    >
+                    </Input>    
+                    <Input
+                        class="lucky-btn" 
+                        type="submit" 
+                        value="I'm Feeling Lucky"
+                    >
+                    </Input>
+                </div>
+            </form>
+        );
+    }
+}
+
+export default SearchForm;
