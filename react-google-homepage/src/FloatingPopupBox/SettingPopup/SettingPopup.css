@@ -1,0 +1,26 @@
+.setting-floating-popup {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    right: 29px;
+    padding: 10px 0;
+    border: 1px solid #999;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    z-index: 1;
+}
+  
+.setting-floating-popup a {
+    display: block;
+    line-height: 44px;
+    padding: 0 20px 0 21px;
+    margin: 2px 10px 0;
+    font-size: 14px;
+    color: #5f6368;
+    cursor: pointer;
+}
+  
+.setting-floating-popup a:hover {
+    text-decoration: underline;
+}
+  

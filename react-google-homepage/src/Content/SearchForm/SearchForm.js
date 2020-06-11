@@ -14,7 +14,6 @@ class SearchForm extends Component {
                     <Input
                         class="searchText"
                         type="text"
-                        value=""
                     > 
                     </Input>
                     <MicrophoneIcon/>

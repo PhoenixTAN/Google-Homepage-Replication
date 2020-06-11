@@ -1,0 +1,37 @@
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgba(0,0,0,0.87);
+    width: 100px;
+    height: 100px;
+  }
+  
+  .app-icon:hover {
+    text-decoration: none;
+    background-color: #f6fafe;
+    border-radius: 8px;
+  } 
+  
+  .app-icon-image {
+    margin: 0 auto;
+    padding: 6px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .app-icon-name {
+    display: inline-block;
+    text-align: center;
+    color: #404040;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .09px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .app-icon-name:hover {
+    white-space: normal;
+  }
