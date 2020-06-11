@@ -1,5 +1,5 @@
 .account-popup-content {
-    display: block; /* control by javascript */
+    display: none; /* control by javascript */
     position: absolute;
     top: 55px;
     /* right: 27px;     */
@@ -18,18 +18,18 @@
     display: block;
     border-top: 1px solid #e8eaed;
 }
-  
+
 .account-popup-content::-webkit-scrollbar {
     width: 16px;
 }  
-  
+
 .account-popup-content::-webkit-scrollbar-thumb {
     background: #dadce0;
     background-clip: padding-box;
     border: 4px solid transparent;
     border-radius: 8px;
 }
-  
+
 .profile {
     flex-direction: column;
     justify-content: center;

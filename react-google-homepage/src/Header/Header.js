@@ -10,7 +10,7 @@ const Header = () => {
         <div className="empty-box"></div>
         <a className="head-right-links" href="/">Gmail</a>
         <a className="head-right-links" href="/">Images</a>
-        <img className="head-right-google-apps" 
+        <img alt="" className="head-right-google-apps" 
               id="head-right-google-apps" 
               src={google_apps_logo}>
         </img>

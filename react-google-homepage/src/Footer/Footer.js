@@ -1,15 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './Footer.css'
-import {SettingClickContext} from '../Context/SettingClickContext.js'
 
 const Footer = () => {
-    const settingContext = useContext(SettingClickContext);
-    console.log('Footer rendering...');
-    let status = settingContext.isClicked;
+
     const settingClickHandler = () => {
-      console.log('Setting onClick Handler');
-      settingContext.isClicked = !settingContext.isClicked;
-      status = settingContext.isClicked;
+      const settingPopup = document.getElementById("setting-floating-popup");
+      settingPopup.style.display = "block";
     }
 
     return (
@@ -22,11 +18,9 @@ const Footer = () => {
 
         <a href="/">Privacy</a>
         <a href="/">Terms</a>
-        <SettingClickContext.Provider
-          value={{isClicked: status}}
-        >
-          <a href="/" onClick={settingClickHandler}>Settings</a>
-        </SettingClickContext.Provider>
+        
+        <a href="/" onClick={settingClickHandler}>Settings</a>
+        
       </footer>
     );
 }

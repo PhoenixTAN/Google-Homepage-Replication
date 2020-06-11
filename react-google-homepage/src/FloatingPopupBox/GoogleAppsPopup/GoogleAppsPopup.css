@@ -1,5 +1,5 @@
 .google-apps-popup {
-    display: block;
+    display: none;
     box-sizing: border-box;
     position: absolute;
     top: 55px; 
