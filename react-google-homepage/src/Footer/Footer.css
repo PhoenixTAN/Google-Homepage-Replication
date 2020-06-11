@@ -1,4 +1,4 @@
-footer {
+.App > footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -12,9 +12,8 @@ footer {
     box-sizing: border-box;
   }
   
-  footer a {
+.App > footer a {
     display: inline-block;
     padding-left: 27px;
     color: #5f6368;
-  }
-  
+}

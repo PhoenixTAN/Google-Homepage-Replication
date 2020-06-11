@@ -8,6 +8,7 @@ import googleLogo from './images/googlelogo.png';
 import SettingPopup from './FloatingPopupBox/SettingPopup/SettingPopup.js'
 import {SettingClickContext} from './Context/SettingClickContext.js'
 import GoogleAppsPopup from './FloatingPopupBox/GoogleAppsPopup/GoogleAppsPopup.js';
+import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       </SettingClickContext.Consumer>
       <SettingPopup></SettingPopup>
       <GoogleAppsPopup></GoogleAppsPopup>
+      <AccountPopup></AccountPopup>
     </div>
   );
 }

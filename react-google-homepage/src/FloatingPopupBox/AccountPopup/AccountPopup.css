@@ -1,0 +1,319 @@
+.account-popup-content {
+    display: block; /* control by javascript */
+    position: absolute;
+    top: 55px;
+    /* right: 27px;     */
+    width: 354px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 55px - 100px);     /* 100% - top 55px - bottom 100px */
+    /* vh: Equal to 1% of the height of the viewport's initial containing block. */
+}
+  
+.line-seperator {
+    display: block;
+    border-top: 1px solid #e8eaed;
+}
+  
+.account-popup-content::-webkit-scrollbar {
+    width: 16px;
+}  
+  
+.account-popup-content::-webkit-scrollbar-thumb {
+    background: #dadce0;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 8px;
+}
+  
+.profile {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+  
+.portrait {
+    position: relative;     /* for the camera icon */
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+  
+.portrait img {
+    display: block;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+  
+.change-profile-cam {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+  
+.portrait a {
+    display: block;
+    border-radius: 50%;
+    background: #fff;
+    width: 26px;
+    height: 26px;
+    box-shadow: 0 1px 1px 0 rgba(65,69,73,0.3), 0 1px 3px 1px rgba(65,69,73,0.15);
+}
+  
+.portrait svg {
+    display: block;
+    fill:  #5f6368;
+    margin: auto;
+}
+  
+.account-name {
+    color: #202124;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: .29px;
+    text-align: center;
+    padding-top: 10px;
+}
+  
+.email {
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+}
+  
+.manage-account {
+    display: block;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 100px;
+    color: #3c4043;
+    font: 500 14px/16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    letter-spacing: .25px;
+    margin: 16px auto 0 auto;
+    max-width: 254px;
+    padding: 8px 16px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+.manage-account:hover {
+    text-decoration: none;
+}
+  
+.other-accounts {
+    cursor: pointer;
+}
+  
+.account {
+    padding: 10px 0;
+}
+  
+.account-info {
+    padding-left: 10px;
+}
+  
+.account-info>div {
+    width: 244px;
+}
+  
+.account {
+    justify-content: center;
+}
+  
+.account:hover {
+    background-color: #f7f8f8;
+}
+  
+.account img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+  
+.first-row {
+    justify-content: space-between;
+}
+  
+.first-row div:nth-child(1) {
+    color: #3c4043;
+    font: 500 14px/18px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    letter-spacing: .25px;
+}
+  
+.first-row div:nth-child(2) {
+    color: #5d6369;
+    font: italic 12px/14px Arial,sans-serif;
+}
+  
+.second-row {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+  
+.second-row span {
+    color: #5f6368;
+    display: inline-block;
+    font: 12px/16px Arial,sans-serif;
+}
+  
+.arrow {
+    display: inline-block;
+    height: 20px;
+}
+  
+.third-row {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+}
+  
+.third-row a {
+    background-color: #1a73e8;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 16px;
+    padding: 10px 24px;
+    margin-top: 14px;
+    margin-right: 12px;
+}
+  
+.third-row a:hover {
+    text-decoration: underline;
+    background-color: #2b7de9;
+    border-color: transparent;
+    box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3), 0 1px 3px 1px rgba(66,133,244,0.15);
+}
+  
+.third-row button {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+    display: inline-block;
+    font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 16px;
+    border-radius: 4px;
+    padding: 10px 24px;
+    margin-top: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.third-row button:hover {
+    background-color: #f7f8f8;
+}
+  
+.third-row button:focus {
+    outline: none;
+}
+  
+.add-another-account {
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 14px 42px;
+}
+  
+.add-account-icon {
+    display: block;
+}
+  
+.add-another-account:hover {
+    background-color: #f7f8f8;
+    text-decoration: none;
+}
+  
+.add-another-account div:nth-child(2) {
+    padding-left: 17px;
+    color: #3c4043;
+    font: 14px/16px Arial,sans-serif;
+    letter-spacing: .25px;
+}
+  
+.add-another-account svg {
+    fill: #5f6368;
+}
+  
+.sign-out {
+    display: block;
+    color: #3c4043;
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font: 14px/16px Arial,sans-serif;
+    letter-spacing: .15px;
+    margin: 16px auto;
+    padding: 10px 24px;
+    width: 53px;
+}
+  
+.sign-out:hover {
+    text-decoration: none;
+    background-color: #f7f8f8;
+}
+  
+.account-popup-content footer {
+    justify-content: center;
+}
+  
+.account-popup-content footer span {
+    display: inline-block;
+    color: #5f6368;
+    display: inline-block;
+    font-size: 13px;
+    margin: 14px 0;
+    padding: 4px 0;
+}
+  
+.account-popup-content footer a {
+    color: #5f6368;
+    display: inline-block;
+    font: 12px/16px Arial,sans-serif;
+    padding: 4px 8px;
+    margin: 14px 0;
+    border-radius: 4px;
+}
+  
+.account-popup-content footer a:hover {
+    text-decoration: none;
+    background-color: #f7f8f8;
+}
+  
+.more-from-google {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    color: #1a73e8;
+    font: 14px/16px Arial,sans-serif;
+    margin: 16px auto 20px auto;
+    padding: 10px 24px;
+    width: 113px;
+    height: 16px;
+}
+  
+.more-from-google:hover {
+    background-color:#f8f8ff;
+    text-decoration: none;
+}
