@@ -1,13 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Footer.css'
 
-const Footer = () => {
+class Footer extends Component {
 
-    const settingClickHandler = () => {
-      const settingPopup = document.getElementById("setting-floating-popup");
-      settingPopup.style.display = "block";
-    }
-
+  render() {
     return (
       <footer className="flexbox">
         <a href="/">Advertising</a>
@@ -19,10 +15,12 @@ const Footer = () => {
         <a href="/">Privacy</a>
         <a href="/">Terms</a>
         
-        <a href="/" onClick={settingClickHandler}>Settings</a>
+        <a href="/" onClick={this.props.changeSettingHandler}>Settings</a>
         
       </footer>
     );
+  }
+    
 }
 
 export default Footer;
