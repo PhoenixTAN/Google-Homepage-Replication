@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import namePng from './account-icons/ziqi.png';
+import './AccountInfo.css';
 
 class AccountInfo extends Component {
     // 这个用functional component怎么解决
