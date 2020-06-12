@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './SearchForm.css'
-import SearchIcon from '../Components/SearchIcon/SearchIcon.js';
-import Input from '../Components/Input/Input.js';
-import MicrophoneIcon from '../Components/MicrophoneIcon/MicrophoneIcon.js'
+import SearchIcon from './SearchIcon/SearchIcon.js';
+import Input from './Input/Input.js';
+import MicrophoneIcon from './MicrophoneIcon/MicrophoneIcon.js'
 
 class SearchForm extends Component {
 
