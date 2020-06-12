@@ -1,5 +1,5 @@
 import React from 'react';
-import google_apps_logo from '../images/meun-icon.png';
+import google_apps_logo from './meun-icon.png';
 import './Header.css'
 
 const Header = (props) => {
