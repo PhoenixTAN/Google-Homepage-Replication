@@ -15,7 +15,7 @@ class Footer extends Component {
         <a href="/">Privacy</a>
         <a href="/">Terms</a>
         
-        <a href="/" onClick={this.props.changeSettingHandler}>Settings</a>
+        <span onClick={this.props.changeSettingHandler}>Settings</span>
         
       </footer>
     );

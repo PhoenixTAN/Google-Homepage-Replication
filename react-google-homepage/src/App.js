@@ -3,8 +3,7 @@ import './App.css';
 import Header from './Header/Header.js';
 import Footer from './Footer/Footer.js'
 import Main from './Content/Container/Main.js';
-import SearchForm from './Content/SearchForm/SearchForm.js'
-import googleLogo from './images/googlelogo.png';
+
 import SettingPopup from './FloatingPopupBox/SettingPopup/SettingPopup.js';
 import GoogleAppsPopup from './FloatingPopupBox/GoogleAppsPopup/GoogleAppsPopup.js';
 import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';
@@ -12,33 +11,87 @@ import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';
 class App extends Component {
 
   state = {
-      settingPopupState: false
+    settingPopupState: false,
+    googleAppsPopupState: false,
+    accountPopupState: false
   }
 
-  changeSettingHandler = () => {
-    console.log("onClick!");
+  changeSettingHandler = (event) => {
     const show = this.state.settingPopupState;
     this.setState({settingPopupState: !show});
+
+    // double click the icon can clear the popup window
+    event.nativeEvent.stopImmediatePropagation();
+
+    const self = this;
+    document.addEventListener("click", function removePopup() {
+      self.setState({settingPopupState: false});
+      document.removeEventListener("click", removePopup);
+    });
+  }
+
+  changeGoogleAppsHandler = (event) => {
+    const show = this.state.googleAppsPopupState;
+    // close other popup
+    if ( this.state.accountPopupState ) {
+      this.setState({googleAppsPopupState: !show, accountPopupState: false});
+    }
+    else {
+      this.setState({googleAppsPopupState: !show});
+    }
+
+    // double click the icon can clear the popup window
+    event.nativeEvent.stopImmediatePropagation();
+    
+    // add event listener for the document
+    // click the white area the clear the popup window
+    const self = this;  // 这个有没有办法改一下
+    document.addEventListener("click", function removePopup() {
+      self.setState({googleAppsPopupState: false});
+      document.removeEventListener("click", removePopup);
+    });
+    
+  }
+
+  changeAccountProfileHandler = (event) => {
+    const show = this.state.accountPopupState;
+    // close other popup window
+    if ( this.state.googleAppsPopupState ) {
+      this.setState({accountPopupState: !show, googleAppsPopupState: false});
+    }
+    else {
+      this.setState({accountPopupState: !show});
+    }
+    
+    // double click the icon can clear the popup window
+    event.nativeEvent.stopImmediatePropagation();
+    
+    // add event listener for the document
+    // click the white area the clear the popup window
+    const self = this;
+    document.addEventListener("click", function removePopup() {
+      self.setState({accountPopupState: false});
+      document.removeEventListener("click", removePopup);
+    });
   }
 
   render() {
     console.log('App is rendering ...');
-    console.log(this.state.settingPopupState);
     return (
       <div className="App">
-        <Header/>
-        <Main>
-          <img alt="google-logo" className="google-logo" src={googleLogo}></img>
-          <SearchForm/>
-        </Main>
-        <button onClick={this.changeSettingHandler}>Show Setting Popup</button>
+        <Header
+          changeGoogleAppsHandler={this.changeGoogleAppsHandler}
+          changeAccountProfileHandler={this.changeAccountProfileHandler}
+        >
+        </Header>
+        <Main></Main>
         <Footer
           changeSettingHandler={this.changeSettingHandler}
         >
         </Footer>
         {this.state.settingPopupState ? <SettingPopup></SettingPopup> : null}
-        <GoogleAppsPopup></GoogleAppsPopup>
-        <AccountPopup></AccountPopup>
+        {this.state.googleAppsPopupState ? <GoogleAppsPopup></GoogleAppsPopup> : null}
+        {this.state.accountPopupState ? <AccountPopup></AccountPopup> : null}
       </div>
     );
   }

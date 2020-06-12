@@ -2,7 +2,7 @@ import React from 'react';
 import google_apps_logo from '../images/meun-icon.png';
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
       <header className="flexbox">
         <a className="head-left" href="/">About</a>
@@ -10,11 +10,16 @@ const Header = () => {
         <div className="empty-box"></div>
         <a className="head-right-links" href="/">Gmail</a>
         <a className="head-right-links" href="/">Images</a>
-        <img alt="" className="head-right-google-apps" 
-              id="head-right-google-apps" 
-              src={google_apps_logo}>
+        <img alt="" 
+             className="head-right-google-apps" 
+             src={google_apps_logo}
+             onClick={props.changeGoogleAppsHandler}
+        >
         </img>
-        <button className="head-right-sign-in" id="sign-in">
+        <button 
+          className="head-right-sign-in" 
+          onClick={props.changeAccountProfileHandler}
+        >
             Sign in
         </button>
       </header>

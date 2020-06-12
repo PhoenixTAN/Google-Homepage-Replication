@@ -17,3 +17,15 @@
     padding-left: 27px;
     color: #5f6368;
 }
+
+/* 这里怎么缩短一下 */
+.App > footer span {
+  display: inline-block;
+  padding-left: 27px;
+  color: #5f6368;
+}
+
+.App > footer > span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

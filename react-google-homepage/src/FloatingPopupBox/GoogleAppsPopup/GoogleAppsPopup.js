@@ -7,10 +7,10 @@ import Icon from './AppsIcon.js';
 
 const GoogleAppsPopup = () => {
     
-    console.log(icons1);
-    console.log(icons2);
     return (
-        <div className="google-apps-popup flexbox">
+        <div className="google-apps-popup flexbox"
+            onClick={(event)=>{event.nativeEvent.stopImmediatePropagation()}}
+        >
             <div className="apps-icon-section flexbox">
                 {                 
                     icons1.map( ({name, image}) => {
