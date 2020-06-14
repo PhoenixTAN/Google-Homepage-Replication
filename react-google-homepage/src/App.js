@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Header/Header.js';
 import Footer from './Footer/Footer.js'
 import Main from './Content/Container/Main.js';
-
 import SettingPopup from './FloatingPopupBox/SettingPopup/SettingPopup.js';
 import GoogleAppsPopup from './FloatingPopupBox/GoogleAppsPopup/GoogleAppsPopup.js';
 import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';

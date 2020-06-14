@@ -4,3 +4,7 @@
     width: 24px;
     padding: 0 16px;
 }
+
+.right-microphone-icon:hover {
+    cursor: pointer;
+}

@@ -1,37 +1,59 @@
 import React, {Component} from 'react';
 import './SearchForm.css'
 import SearchIcon from './SearchIcon/SearchIcon.js';
-import Input from './Input/Input.js';
 import MicrophoneIcon from './MicrophoneIcon/MicrophoneIcon.js'
+import SubmitBar from './SubmitBar/SubmitBar.js';
+
+import SearchPopup from '../../FloatingPopupBox/SearchPopup/SearchPopup.js';
 
 class SearchForm extends Component {
 
+    state = {
+        showPopup: false
+    }
+
+    /**
+     * if onFocus, then show the popup
+     */
+    searchTextOnFocusHandler = () => {
+        console.log('onFocus');
+        
+        this.setState({showPopup: true});
+
+        const self = this;
+        document.addEventListener("click", function removePopup() {
+            self.setState({showPopup: false});
+            document.removeEventListener("click", removePopup);
+        });
+    }
+
+    /**
+     * 
+     * @param {*} event onClick event
+     * Function: stop the event bubbling
+     */
+    searchTextOnClickHandler = (event) => {
+        console.log('onClick');
+        event.nativeEvent.stopImmediatePropagation();
+    }
+
     render() {
+
         return (
             <form className="search-form">
                 <div className="search-bar-wrap flexbox">
                     <SearchIcon/>
-                    <Input
-                        class="searchText"
+                    <input
+                        className="searchText"
                         type="text"
+                        onFocus={this.searchTextOnFocusHandler}
+                        onClick={this.searchTextOnClickHandler}
                     > 
-                    </Input>
+                    </input>
                     <MicrophoneIcon/>
+                    {this.state.showPopup && <SearchPopup/>}
                 </div>
-                <div className="submitbar-wrap flexbox"> 
-                    <Input
-                        class="google-search-btn" 
-                        type="submit" 
-                        value="Google Search"
-                    >
-                    </Input>    
-                    <Input
-                        class="lucky-btn" 
-                        type="submit" 
-                        value="I'm Feeling Lucky"
-                    >
-                    </Input>
-                </div>
+                <SubmitBar/>
             </form>
         );
     }
