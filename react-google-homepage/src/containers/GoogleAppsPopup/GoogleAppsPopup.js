@@ -1,8 +1,7 @@
 import React from 'react';
 import './GoogleAppsPopup.css';
-import './AppsIcon.css'
 import {icons1, icons2} from './icons.js';
-import Icon from './AppsIcon.js';
+import Icon from '../../components/AppsIcon/AppsIcon.js';
 
 
 const GoogleAppsPopup = () => {

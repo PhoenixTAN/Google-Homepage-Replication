@@ -1,6 +1,6 @@
 import './History.css';
 import React from 'react';
-import SearchIcon from '../../../Content/SearchForm/SearchIcon/SearchIcon.js';
+import SearchIcon from '../SearchIcon/SearchIcon.js';
 
 const History = (props) => {
 

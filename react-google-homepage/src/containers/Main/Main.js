@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import './SearchForm.css'
-import SearchIcon from './SearchIcon/SearchIcon.js';
-import MicrophoneIcon from './MicrophoneIcon/MicrophoneIcon.js'
-import SubmitBar from './SubmitBar/SubmitBar.js';
+import './Main.css'
+import googleLogo from '../../assets/images/googlelogo.png';
+import SearchIcon from '../../components/SearchIcon/SearchIcon.js';
+import MicrophoneIcon from '../../components/MicrophoneIcon/MicrophoneIcon.js';
+import SubmitBar from '../../components/SubmitBar/SubmitBar.js';
+import SearchPopup from '../SearchPopup/SearchPopup.js';
 
-import SearchPopup from '../../FloatingPopupBox/SearchPopup/SearchPopup.js';
-
-class SearchForm extends Component {
-
+class Main extends Component  {
+    // 用references
     state = {
         showPopup: false,
         showShadow: false
@@ -17,8 +17,6 @@ class SearchForm extends Component {
      * if onFocus, then show the popup
      */
     searchTextOnFocusHandler = () => {
-        console.log('onFocus');
-        
         // TODO: change CSS style
         this.setState({showPopup: true});
 
@@ -47,8 +45,8 @@ class SearchForm extends Component {
     searchBarMouseoutListener = () => {
         this.setState({showShadow: false});
     }
-
-    render() {
+    
+    render () {
         const searchBoxShadow = {
             boxShadow: "none",
             borderRadius: "24px",
@@ -76,35 +74,37 @@ class SearchForm extends Component {
         if ( !this.state.showPopup && this.state.showShadow ) {
             searchBoxShadow.boxShadow = "0 2px 3px 0 rgba(32,33,36,0.28)";
         }
-
         return (
-            <form className="search-form">
-                {/* 怎么改style */}
-                <div className="search-bar-wrap flexbox" 
-                    style={searchBoxShadow}
-                    onMouseOver={this.searchBarMouseoverListener}
-                    onMouseOut={this.searchBarMouseoutListener}
-                >
-                    <SearchIcon/>
-                    <input
-                        className="searchText"
-                        type="text"
-                        onFocus={this.searchTextOnFocusHandler}
-                        onClick={this.searchTextOnClickHandler}
-                    > 
-                    </input>
-                    <MicrophoneIcon/>
-                    {this.state.showPopup && 
-                        <SearchPopup
-                            borderTop={borderTop}
-                        >
-                        </SearchPopup>
-                    }
-                </div>
-                <SubmitBar/>
-            </form>
+            <main className="container">
+                <img alt="google-logo" className="google-logo" src={googleLogo}></img>
+                <form className="search-form">
+                    {/* 怎么改style */}
+                    <div className="search-bar-wrap flexbox" 
+                        style={searchBoxShadow}
+                        onMouseOver={this.searchBarMouseoverListener}
+                        onMouseOut={this.searchBarMouseoutListener}
+                    >
+                        <SearchIcon/>
+                        <input
+                            className="searchText"
+                            type="text"
+                            onFocus={this.searchTextOnFocusHandler}
+                            onClick={this.searchTextOnClickHandler}
+                        > 
+                        </input>
+                        <MicrophoneIcon/>
+                        {this.state.showPopup && 
+                            <SearchPopup
+                                borderTop={borderTop}
+                            >
+                            </SearchPopup>
+                        }
+                    </div>
+                    <SubmitBar/>
+                </form>
+            </main>
         );
     }
 }
 
-export default SearchForm;
+export default React.memo(Main);

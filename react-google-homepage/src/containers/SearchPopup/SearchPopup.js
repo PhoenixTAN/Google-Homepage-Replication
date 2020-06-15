@@ -1,8 +1,8 @@
 import './SearchPopup.css';
 import React from 'react';
-import SubmitBar from '../../Content/SearchForm/SubmitBar/SubmitBar.js';
+import SubmitBar from '../../components/SubmitBar/SubmitBar.js';
 import history from './history.json';
-import History from './History/History.js';
+import History from '../../components/History/History.js';
 
 const SearchPopup = (props) => {
 

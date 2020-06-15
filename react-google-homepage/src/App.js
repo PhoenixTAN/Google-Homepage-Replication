@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header/Header.js';
-import Footer from './Footer/Footer.js'
-import Main from './Content/Container/Main.js';
-import SettingPopup from './FloatingPopupBox/SettingPopup/SettingPopup.js';
-import GoogleAppsPopup from './FloatingPopupBox/GoogleAppsPopup/GoogleAppsPopup.js';
-import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';
+import Header from './components/Header/Header.js';
+import Footer from './components/Footer/Footer.js'
+import Main from './containers/Main/Main.js';
+import SettingPopup from './containers/SettingPopup/SettingPopup.js';
+import GoogleAppsPopup from './containers/GoogleAppsPopup/GoogleAppsPopup.js';
+import AccountPopup from './containers/AccountPopup/AccountPopup.js';
 
 class App extends Component {
-  // 这个怎么改成functional 
+
   state = {
     settingPopupState: false,
     googleAppsPopupState: false,
@@ -22,11 +22,10 @@ class App extends Component {
     // double click the icon can clear the popup window
     event.nativeEvent.stopImmediatePropagation();
 
-    const self = this;
-    document.addEventListener("click", function removePopup() {
-      self.setState({settingPopupState: false});
+    document.addEventListener("click", (function removePopup() {
+      this.setState({settingPopupState: false});
       document.removeEventListener("click", removePopup);
-    });
+    }.bind(this)));
   }
 
   changeGoogleAppsHandler = (event) => {
@@ -44,11 +43,10 @@ class App extends Component {
     
     // add event listener for the document
     // click the white area the clear the popup window
-    const self = this;  // 这个有没有办法改一下
-    document.addEventListener("click", function removePopup() {
-      self.setState({googleAppsPopupState: false});
+    document.addEventListener("click", (function removePopup() {
+      this.setState({googleAppsPopupState: false});
       document.removeEventListener("click", removePopup);
-    });
+    }.bind(this)));
     
   }
 
@@ -67,11 +65,10 @@ class App extends Component {
     
     // add event listener for the document
     // click the white area the clear the popup window
-    const self = this;
-    document.addEventListener("click", function removePopup() {
-      self.setState({accountPopupState: false});
+    document.addEventListener("click", (function removePopup() {
+      this.setState({accountPopupState: false});
       document.removeEventListener("click", removePopup);
-    });
+    }.bind(this)));
   }
 
   render() {
@@ -83,14 +80,14 @@ class App extends Component {
           changeAccountProfileHandler={this.changeAccountProfileHandler}
         >
         </Header>
-        <Main></Main>
+        <Main/>
         <Footer
           changeSettingHandler={this.changeSettingHandler}
         >
         </Footer>
-        {this.state.settingPopupState ? <SettingPopup></SettingPopup> : null}
-        {this.state.googleAppsPopupState ? <GoogleAppsPopup></GoogleAppsPopup> : null}
-        {this.state.accountPopupState ? <AccountPopup></AccountPopup> : null}
+        {this.state.settingPopupState && <SettingPopup/>}
+        {this.state.googleAppsPopupState && <GoogleAppsPopup/> }
+        {this.state.accountPopupState && <AccountPopup/>}
       </div>
     );
   }

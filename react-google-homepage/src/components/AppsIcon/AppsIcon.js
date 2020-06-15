@@ -1,4 +1,5 @@
 import React from 'react';
+import './AppsIcon.css';
 
 const AppsIcon = (props) => {
     return (

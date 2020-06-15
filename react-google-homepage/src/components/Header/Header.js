@@ -1,6 +1,6 @@
 import React from 'react';
-import google_apps_logo from './meun-icon.png';
-import './Header.css'
+import google_apps_logo from '../../assets/icons/meun-icon.png';
+import './Header.scss'
 
 const Header = (props) => {
     return (

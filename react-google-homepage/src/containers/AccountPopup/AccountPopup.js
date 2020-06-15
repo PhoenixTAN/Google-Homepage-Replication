@@ -1,7 +1,7 @@
 import React from 'react';
 import './AccountPopup.css';
-import profilePng from './account-icons/profile.png';
-import AccountInfo from './AccountInfo/AccountInfo';
+import profilePng from '../../assets/icons/profile.png';
+import AccountInfo from '../../components/AccountInfo/AccountInfo';
 
 const AccoutPopup = () => {
 
