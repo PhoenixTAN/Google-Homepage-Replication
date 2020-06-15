@@ -4,15 +4,25 @@ import SubmitBar from '../../Content/SearchForm/SubmitBar/SubmitBar.js';
 import history from './history.json';
 import History from './History/History.js';
 
-const SearchPopup = () => {
+const SearchPopup = (props) => {
 
     return (
         <div 
             className="search-popup-content" 
+            style={props.borderTop}
             onClick={(event) => {
                 event.nativeEvent.stopImmediatePropagation();
             }}
         >
+            <div style={
+                    {
+                        borderTop: "1px solid #e8eaed",
+                        margin: "0 20px 0 14px",
+                        paddingBottom: "4px",
+                    }
+                }
+            >
+            </div>
             <div className="try-searching-for">
                 Try searching for
             </div>

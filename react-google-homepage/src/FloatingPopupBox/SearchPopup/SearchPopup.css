@@ -1,11 +1,11 @@
 .search-popup-content {
     display: block;  /**/
     position: absolute;
-    top: 45px;
+    top: 44px; /* 45px */
     width: 582px;
     background: #fff;
     border-radius: 0 0 24px 24px;
-    box-shadow: 0 3px 3px 1px rgba(60,64,67,.30);
+    box-shadow: 0 3px 4px 1px rgba(32,33,36,0.28);
   }
   
   .try-searching-for {
@@ -15,6 +15,10 @@
     line-height: 16px;
     margin: 0 20px 0 16px;
     padding: 8px 0 8px 0;
+  }
+
+  .try-searching-for:hover {
+    cursor: default;
   }
   
   .search-history {
