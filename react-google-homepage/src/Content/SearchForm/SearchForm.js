@@ -60,7 +60,7 @@ class SearchForm extends Component {
         }
 
         if ( this.state.showPopup ) {
-            searchBoxShadow.boxShadow = "0 2px 6px 0 rgba(32,33,36,0.28)";
+            searchBoxShadow.boxShadow = "0 2px 3px 0 rgba(32,33,36,0.28)";
             // 0 4px 6px 0 rgba(32,33,36,0.28) google bar
             // 0 1px 6px 0 rgba(32,33,36,0.28) vallina bar
             // 0 4px 6px 0 rgba(32,33,36,0.28) google search popup
@@ -74,7 +74,7 @@ class SearchForm extends Component {
         }
 
         if ( !this.state.showPopup && this.state.showShadow ) {
-            searchBoxShadow.boxShadow = "0 2px 6px 0 rgba(32,33,36,0.28)";
+            searchBoxShadow.boxShadow = "0 2px 3px 0 rgba(32,33,36,0.28)";
         }
 
         return (

@@ -8,7 +8,7 @@ import GoogleAppsPopup from './FloatingPopupBox/GoogleAppsPopup/GoogleAppsPopup.
 import AccountPopup from './FloatingPopupBox/AccountPopup/AccountPopup.js';
 
 class App extends Component {
-
+  // 这个怎么改成functional 
   state = {
     settingPopupState: false,
     googleAppsPopupState: false,
